@@ -18,7 +18,7 @@
 
 .gen-array p:hover {
     color: white;
-    font-weight: bold;
+    font-style: italic;
 }
 
 .set-speed, .set-length {

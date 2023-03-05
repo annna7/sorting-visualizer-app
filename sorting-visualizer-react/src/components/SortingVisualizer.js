@@ -5,8 +5,15 @@ import uniqid from 'uniqid';
 
 
 const SortingVisualizer = ({arr}) => {
-    const sortingBars = arr.map((value) => (
-        <Bar key={uniqid()} height={value} />
+    const toColor = (code) => {
+        switch (code) {
+            case 0: return "darkgreen";
+            case 1: return "red";
+            case 2: return "blue";
+        }
+    }
+    const sortingBars = arr.map((value, index) => (
+        <Bar key={index} height={value.value} color={toColor(value.status)}/>
     ));
 
     return (
