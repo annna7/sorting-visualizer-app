@@ -1,0 +1,17 @@
+.footer {
+    height: 15%;
+    background-color: red;
+    display: flex;
+}
+
+.footer-flex {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.select-algo {
+    display: flex;
+}

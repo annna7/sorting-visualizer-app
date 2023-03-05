@@ -1,0 +1,11 @@
+.header {
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 15vh;
+    font-size: calc(10px + 2vmin);
+    height: 20%;
+    background-color: yellow;
+}
