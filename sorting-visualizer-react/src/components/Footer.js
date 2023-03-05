@@ -2,23 +2,31 @@
 import React from 'react';
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({arrayLength, sortingSpeed, handleGen, changeLength, changeSpeed, changeAlgo}) => {
     return (
         <>
             <div className="footer">
                 <div className="footer-flex">
                     <div className="gen-array">
-                        <p> Generate New Array </p>
+                        <p onClick={handleGen}> Generate New Array </p>
                     </div>
-                    <div className="select-length">
+                    <div className="set-length">
                         <p> Set Length </p>
+                        <input type="range" id="length-slider" className="slider" min="50" max="200" value={arrayLength} onChange={(e) => changeLength(e.target.value)}></input>
                     </div>
                     <div className="set-speed">
                         <p> Set Speed </p>
+                        <input type="range" id="speed-slider" className="slider" min="1" max="3" step="1" value={sortingSpeed} onChange={(e) => changeSpeed(e.target.value)}></input>
                     </div>
                     <div className="select-algo">
-                        <p> Select Algorithm </p>
-                        <p> Bubble Sort </p>
+                        <p> Select algorithm</p>
+                        <select onChange={(e) => changeAlgo(e.target.value)}>
+                            <option value="bubble">Bubble Sort</option>
+                            <option value="select">Select Sort</option>
+                            <option value="merge">Merge Sort</option>
+                            <option value="quick">Quick Sort</option>
+                        </select>
+
                     </div>
                 </div>
             </div>
