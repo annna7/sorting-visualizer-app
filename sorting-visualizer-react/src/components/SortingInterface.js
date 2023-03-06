@@ -4,6 +4,19 @@ import Footer from './Footer.js';
 import React, {useEffect, useState} from "react";
 
 const SortingInterface = () => {
+    const INF = 1000;
+    const getSleepTime = () => {
+        switch(algo) {
+            case "bubble":
+                return [INF, 150, 50, 15];
+            case "select":
+                return [INF, 300, 150, 30];
+            case "merge":
+                return [INF, 100, 30, 4];
+            case "heap":
+                return [INF, 130, 50, 10];
+        }
+    }
     const sleep = (milliSeconds) => {
         return new Promise((resolve) => setTimeout(resolve, milliSeconds))
     }
@@ -32,14 +45,8 @@ const SortingInterface = () => {
 
     const changeSpeed = (newSpeed) => {
         setSortingSpeed(newSpeed);
-        changeStatus(2, 1);
     }
 
-    const changeStatus = (index, newStatus) => {
-        let newArr = [...arr];
-        newArr[index].status = newStatus;
-        setTimeout(() => setArr(newArr), index * 1000);
-    }
     const changeAlgo = (newAlgo) => {
         setAlgo(newAlgo);
     }
@@ -86,7 +93,7 @@ const SortingInterface = () => {
 
                     newArr[j].status = newArr[j + 1].status = 1;
                     setArr([...newArr]);
-                    await sleep(15);
+                    await sleep(getSleepTime()[sortingSpeed]);
 
                     newArr[j].status = newArr[j + 1].status = 0;
                 }
@@ -116,7 +123,7 @@ const SortingInterface = () => {
 
             newArr[i].status = newArr[minIndex].status = 1;
             setArr([...newArr]);
-            await sleep(150);
+            await sleep(getSleepTime()[sortingSpeed]);
 
             newArr[i].status = newArr[minIndex].status = 0;
         }
@@ -168,7 +175,7 @@ const SortingInterface = () => {
             if (i <= mid && j <= end) {
                 newArr[i].status = newArr[j].status = 1;
                 setArr([...arr, tempArr]);
-                await sleep(5);
+                await sleep(getSleepTime()[sortingSpeed]);
                 newArr[i].status = newArr[j].status = 0;
             }
         }
@@ -176,7 +183,7 @@ const SortingInterface = () => {
         while (i <= mid) {
             tempArr[k] = newArr[i];
             setArr([...arr, tempArr]);
-            await sleep(5);
+            await sleep(getSleepTime()[sortingSpeed]);
             i++;
             k++;
         }
@@ -184,7 +191,7 @@ const SortingInterface = () => {
         while (j <= end) {
             tempArr[k] = newArr[j];
             setArr([...newArr, tempArr]);
-            await sleep(5);
+            await sleep(getSleepTime()[sortingSpeed]);
             j++;
             k++;
         }
@@ -193,7 +200,7 @@ const SortingInterface = () => {
             newArr[i] = tempArr[i - start];
             setArr([...arr, newArr]);
 
-            await sleep(5);
+            await sleep(getSleepTime()[sortingSpeed]);
         }
     }
 
@@ -217,7 +224,7 @@ const SortingInterface = () => {
 
             newArr[number].status = newArr[largest].status = 1;
             setArr([...newArr]);
-            await sleep(30);
+            await sleep(getSleepTime()[sortingSpeed]);
             newArr[number].status = newArr[largest].status = 0;
             await heapify(newArr, i, largest);
         }
@@ -234,11 +241,11 @@ const SortingInterface = () => {
             if (i > 0) {
                 newArr[i].status = newArr[i - 1].status = 1;
                 setArr([...newArr]);
-                await sleep(30);
+                await sleep(getSleepTime()[sortingSpeed]);
                 newArr[i].status = newArr[i - 1].status = 0;
             } else {
                 setArr([...newArr])
-                await sleep(30);
+                await sleep(getSleepTime()[sortingSpeed]);
             }
         }
 
@@ -249,7 +256,7 @@ const SortingInterface = () => {
 
             newArr[0].status = newArr[i].status = 1;
             setArr([...newArr]);
-            await sleep(30);
+            await sleep(getSleepTime()[sortingSpeed] * 2);
             newArr[0].status = newArr[i].status = 0;
 
             await heapify(newArr, i, 0);
@@ -275,6 +282,7 @@ const SortingInterface = () => {
         <div className="sorting-interface">
             <SortingVisualizer arr={arr}/>
             <Footer
+                algo={algo}
                 arrayLength={arrSize}
                 sortingSpeed={sortingSpeed}
                 isSorting={isSorting}
@@ -289,49 +297,3 @@ const SortingInterface = () => {
 }
 
 export default SortingInterface;
-
-// const quickSort = async () => {
-//     let newArr = [...arr];
-//     await quickSortHelper(newArr, 0, newArr.length - 1);
-//     setArr([...arr].map((value) => {
-//         return {
-//             ...value,
-//             status: 2,
-//         }
-//     }));
-//     setIsSorting(false);
-// }
-//
-// const quickSortHelper = async (newArr, start, end) => {
-//     if (start >= end) return;
-//     let pivot = partition(newArr, start, end);
-//     setArr(newArr);
-//     await sleep(30);
-//     await quickSortHelper(newArr, start, pivot - 1);
-//     await quickSortHelper(newArr, pivot + 1, end);
-// }
-//
-// const partition = async (newArr, start, end) => {
-//     let pivot = newArr[end];
-//     let i = start - 1;
-//
-//     for (let j = start; j < end; ++j) {
-//         if (newArr[j].value < pivot.value) {
-//             ++i;
-//             let temp = newArr[i];
-//             newArr[i] = newArr[j];
-//             newArr[j] = temp;
-//         }
-//     }
-//
-//     let temp = newArr[i + 1];
-//     newArr[i + 1] = newArr[end];
-//     newArr[end] = temp;
-//
-//     newArr[i].status = newArr[end].status = 1;
-//     setArr(newArr);
-//     await sleep(30);
-//     newArr[i].status = newArr[end].status = 0;
-//
-//     return i + 1;
-// }

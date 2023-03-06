@@ -2,7 +2,11 @@
 import React from 'react';
 import './Footer.css'
 
-const Footer = ({arrayLength, sortingSpeed, isSorting, handleGen, changeLength, changeSpeed, changeAlgo, startSorting}) => {
+const Footer = ({algo, arrayLength, sortingSpeed, isSorting, handleGen, changeLength, changeSpeed, changeAlgo, startSorting}) => {
+    const isBubble = () => algo === "bubble";
+    const isSelect = () => algo === "select";
+    const isMerge = () => algo === "merge";
+    const isHeap = () => algo === "heap";
     return (
         <>
             <div className="footer">
@@ -23,10 +27,10 @@ const Footer = ({arrayLength, sortingSpeed, isSorting, handleGen, changeLength, 
                     <div className="footer-flex-item">
                         <div className="select-algo">
                             <p> Select algorithm</p>
-                            <button disabled={isSorting} onClick={() => changeAlgo("bubble")}>Bubble Sort</button>
-                            <button disabled={isSorting} onClick={() => changeAlgo("select")}>Select Sort</button>
-                            <button disabled={isSorting} onClick={() => changeAlgo("merge")}>Merge Sort</button>
-                            <button disabled={isSorting} onClick={() => changeAlgo("heap")}>Heap Sort</button>
+                            <button className={`${isBubble() ? 'highlight-algo' : ''}`} disabled={isSorting} onClick={() => changeAlgo("bubble")}>Bubble Sort</button>
+                            <button className={`${isSelect() ? 'highlight-algo' : ''}`} disabled={isSorting} onClick={() => changeAlgo("select")}>Select Sort</button>
+                            <button className={`${isMerge() ? 'highlight-algo' : ''}`} disabled={isSorting} onClick={() => changeAlgo("merge")}>Merge Sort</button>
+                            <button className={`${isHeap() ? 'highlight-algo' : ''}`} disabled={isSorting} onClick={() => changeAlgo("heap")}>Heap Sort</button>
                         </div>
                         <button className="big-button" disabled={isSorting} onClick={startSorting}>Start!</button>
                     </div>

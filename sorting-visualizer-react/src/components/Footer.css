@@ -26,6 +26,10 @@ button:not(:disabled):hover{
     font-weight: normal;
 }
 
+button:disabled {
+    opacity: 70%;
+}
+
 .footer-flex {
     display: flex;
     width: 100%;
@@ -67,21 +71,6 @@ button:not(:disabled):hover{
     margin-right: 7%;
 }
 
-
-/*select {*/
-/*    margin-left: 3%;*/
-/*    font-family: 'Roboto Mono', sans-serif;*/
-/*    !*-webkit-appearance: none;*!*/
-/*    !*-moz-appearance: none;*!*/
-/*    !*appearance: none;*!*/
-/*    padding: 1px;*/
-/*    border-radius: 2px;*/
-/*}*/
-
-/*select: hover {*/
-/*    background-color: darkslateblue;*/
-/*}*/
-
 .select-algo > p {
     margin-top: 0.2em;
     margin-right: 1%;
@@ -98,10 +87,12 @@ button:not(:disabled):hover{
     box-shadow: 2px 2px rgb(1, 1, 1)
 }
 
-/*.select-algo > button:not(:disabled):hover {*/
-/*    background: darkslateblue;*/
-/*    cursor: pointer;*/
-/*}*/
+.highlight-algo, .highlight-algo:hover {
+    font-weight: bold !important;
+    background-color: #9797ff !important;
+    cursor: default !important;
+    text-shadow: 1px 1px black;
+}
 
 /* RANGE SLIDER - credit: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
@@ -121,6 +112,7 @@ button:not(:disabled):hover{
 .slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
 }
+
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
