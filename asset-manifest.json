@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sorting-visualizer-app/static/css/main.7b121dd4.css",
+    "main.css": "/sorting-visualizer-app/static/css/main.4c869f3a.css",
     "main.js": "/sorting-visualizer-app/static/js/main.2985e0a2.js",
     "index.html": "/sorting-visualizer-app/index.html",
-    "main.7b121dd4.css.map": "/sorting-visualizer-app/static/css/main.7b121dd4.css.map",
+    "main.4c869f3a.css.map": "/sorting-visualizer-app/static/css/main.4c869f3a.css.map",
     "main.2985e0a2.js.map": "/sorting-visualizer-app/static/js/main.2985e0a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b121dd4.css",
+    "static/css/main.4c869f3a.css",
     "static/js/main.2985e0a2.js"
   ]
 }
