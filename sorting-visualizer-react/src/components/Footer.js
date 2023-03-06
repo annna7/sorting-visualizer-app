@@ -24,7 +24,7 @@ const Footer = ({algo, arrayLength, sortingSpeed, isSorting, handleGen, changeLe
                             <input readOnly={isSorting} disabled={isSorting} type="range" id="speed-slider" className="slider" min="1" max="3" step="1" value={sortingSpeed} onChange={(e) => changeSpeed(e.target.value)}></input>
                         </div>
                     </div>
-                    <div className="footer-flex-item">
+                    <div className="footer-flex-item2">
                         <div className="select-algo">
                             <p> Select algorithm</p>
                             <button className={`${isBubble() ? 'highlight-algo' : ''}`} disabled={isSorting} onClick={() => changeAlgo("bubble")}>Bubble Sort</button>

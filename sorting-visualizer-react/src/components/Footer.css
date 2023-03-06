@@ -4,16 +4,7 @@
     color: white;
     font-family: 'Roboto Mono', sans-serif;
     margin-bottom: 10px;
-    font-size: 90%;
-}
-
-.big-button {
-    font-family: 'Roboto Mono', sans-serif;
-    background-color: #272354;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 5%;
+    font-size: 1.5em;
 }
 
 button:not(:disabled):hover{
@@ -42,17 +33,21 @@ button:disabled {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 68%;
+    width: fit-content;
+    margin-bottom: 1%;
+}
+
+.footer-flex-item2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: fit-content;
+    align-items: center;
 }
 
 /* define property for child of footer-flex-item */
 .footer-flex-item > * {
     margin-right: 3%;
     white-space: nowrap;
-}
-
-.select-algo {
-    display: flex;
 }
 
 .gen-array p:hover {
@@ -71,9 +66,14 @@ button:disabled {
     margin-right: 7%;
 }
 
+.select-algo {
+    display: flex;
+    width: max-content;
+}
 .select-algo > p {
     margin-top: 0.2em;
     margin-right: 1%;
+    text-align: center;
 }
 .select-algo > button {
     background: #272354;
@@ -83,8 +83,9 @@ button:disabled {
     padding: 5px;
     border-radius: 5px;
     font-family: 'Roboto Mono', sans-serif;
-    font-size: 80%;
-    box-shadow: 2px 2px rgb(1, 1, 1)
+    font-size: 0.8em;
+    box-shadow: 2px 2px rgb(1, 1, 1);
+    width: fit-content;
 }
 
 .highlight-algo, .highlight-algo:hover {
@@ -94,6 +95,15 @@ button:disabled {
     text-shadow: 1px 1px black;
 }
 
+.big-button {
+    font-family: 'Roboto Mono', sans-serif;
+    background-color: #272354;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5%;
+    font-size: 0.8em;
+}
 /* RANGE SLIDER - credit: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
 .slider {
