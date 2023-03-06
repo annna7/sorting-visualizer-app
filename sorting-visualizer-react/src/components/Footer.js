@@ -24,7 +24,7 @@ const Footer = ({arrayLength, sortingSpeed, isSorting, handleGen, changeLength, 
                             <option value="bubble">Bubble Sort</option>
                             <option value="select">Select Sort</option>
                             <option value="merge">Merge Sort</option>
-                            <option value="quick">Quick Sort</option>
+                            <option value="heap">Heap Sort</option>
                         </select>
                     </div>
                     <button disabled={isSorting} className="start-button" onClick={startSorting}>Start!</button>
