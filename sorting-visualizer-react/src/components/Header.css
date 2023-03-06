@@ -4,8 +4,13 @@
     justify-content: center;
     align-items: center;
     color: white;
-    height: 15vh;
     font-size: calc(10px + 2vmin);
-    height: 20%;
-    background-color: yellow;
+    height: 15%;
+    box-shadow: 2px 2px black;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Homemade Apple', cursive;
+    text-shadow: 2px 2px black;
 }

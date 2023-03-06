@@ -1,7 +1,10 @@
 .bar {
     width: 10px;
-    background-color: darkgreen;
+    background-color: #9797ff;
     margin: 0 1px;
     display: inline-block;
-    height: 30%;
+    border-radius: 5px;
+    box-shadow: 2px 2px white;
+    border: 0.7px solid black;
 }
+

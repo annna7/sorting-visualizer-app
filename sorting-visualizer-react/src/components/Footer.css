@@ -1,15 +1,50 @@
 .footer {
-    height: 20%;
-    background-color: red;
+    background-color: #191733;
     display: flex;
+    color: white;
+    font-family: 'Roboto Mono', sans-serif;
+    margin-bottom: 10px;
+    font-size: 90%;
+}
+
+.big-button {
+    font-family: 'Roboto Mono', sans-serif;
+    background-color: #272354;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+button:not(:disabled):hover{
+    background-color: darkslateblue;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.select-algo > button:not(:disabled):hover {
+    font-weight: normal;
 }
 
 .footer-flex {
     display: flex;
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-flex-item {
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 68%;
+}
+
+/* define property for child of footer-flex-item */
+.footer-flex-item > * {
+    margin-right: 3%;
+    white-space: nowrap;
 }
 
 .select-algo {
@@ -22,12 +57,51 @@
 }
 
 .set-speed, .set-length {
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
+
+.set-speed > p, .set-length > p {
+    margin-right: 7%;
+}
+
+
+/*select {*/
+/*    margin-left: 3%;*/
+/*    font-family: 'Roboto Mono', sans-serif;*/
+/*    !*-webkit-appearance: none;*!*/
+/*    !*-moz-appearance: none;*!*/
+/*    !*appearance: none;*!*/
+/*    padding: 1px;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/*select: hover {*/
+/*    background-color: darkslateblue;*/
+/*}*/
+
+.select-algo > p {
+    margin-top: 0.2em;
+    margin-right: 1%;
+}
+.select-algo > button {
+    background: #272354;
+    color: white;
+    margin-left: 2.5%;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 80%;
+    box-shadow: 2px 2px rgb(1, 1, 1)
+}
+
+/*.select-algo > button:not(:disabled):hover {*/
+/*    background: darkslateblue;*/
+/*    cursor: pointer;*/
+/*}*/
 
 /* RANGE SLIDER - credit: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
@@ -36,7 +110,7 @@
     appearance: none;
     width: 100%; /* Full-width */
     height: 5px; /* Specified height */
-    background: #c4eec4; /* Grey background */
+    background: #dbddff; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -54,17 +128,13 @@
     appearance: none;
     width: 15px; /* Set a specific slider handle width */
     height: 15px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #3a32b7;
     cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
     width: 15px; /* Set a specific slider handle width */
     height: 15px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #38289f;
     cursor: pointer; /* Cursor on hover */
-}
-
-.select-algo > select {
-    margin-left: 5px;
 }
